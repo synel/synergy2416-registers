@@ -31,8 +31,8 @@ clean::
 	make clean
 
 filecopy::
-	@mkdir -p $(DEVELROOT)/CDI/bin
-	@cp src/tempsensormonitor $(DEVELROOT)/CDI/bin/.
+	@mkdir -p $(DEVELROOT)/bin
+	@cp src/synctl $(DEVELROOT)/bin/.
 
 package::
 	@${PROJECTROOT}/createpackage.sh "${PROJECTDIR}" "${PACKAGENAME}" "${LIBFILES}" "${BINFILES}" "${ETCFILES}" "${RECFILES}" "${DESCRIPTION}" "${SECTION}" "${CONTROLDIR}" "${PACKAGEDIR}" "${CDI_MAJOR_VERSION_NUMBER}" "${SVN_DATE}" "${ARCH}"
