@@ -25,7 +25,7 @@ typedef unsigned long long u64;
  * @ notes: none
  */
 
-//static u32 readmem(u32 addr);
+extern u32 readmem(u32 addr);
 
 /* Function to write to mem mapped 32 bit addr
  * @ parameter: 32bit memory address unsigned int
@@ -34,7 +34,7 @@ typedef unsigned long long u64;
  * @ notes: none
  */
 
-//static void writemem(u32 addr, u32 val);
+extern void writemem(u32 addr, u32 val);
 
 /* Function to read s3c register value by name
  * @ parameter: register name

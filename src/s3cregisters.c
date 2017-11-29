@@ -24,15 +24,17 @@ struct reg_info {
 
 
 static struct reg_info regs[] = {
+    { "GPACON_13", 0x56000000, 13, 0x00000001, 'x', "GPIO PORT A pin 13 configuration" },
     { "GPACON_15", 0x56000000, 15, 0x00000001, 'x', "GPIO PORT A pin 15 configuration" },
     { "GPACON_16", 0x56000000, 16, 0x00000001, 'x', "GPIO PORT A pin 16 configuration" },
     { "GPACON_24", 0x56000000, 24, 0x00000001, 'x', "GPIO PORT A pin 24 configuration" },
+    { "GPADAT_13", 0x56000004, 13, 0x00000001, 'd', "GPIO PORT A pin 13 data" },
     { "GPADAT_15", 0x56000004, 15, 0x00000001, 'd', "GPIO PORT A pin 15 data" },
-    { "GPADAT_16", 0x56000004, 16, 0x00000001, 'd', "GPIO PORT A pin 15 data" },
+    { "GPADAT_16", 0x56000004, 16, 0x00000001, 'd', "GPIO PORT A pin 16 data" },
     { "GPADAT_24", 0x56000004, 24, 0x00000001, 'd', "GPIO PORT A pin 24 data" },
 };
 
-static u32 readmem(u32 addr)
+u32 readmem(u32 addr)
 {
     void *map, *regaddr;
     u32 val;
@@ -67,7 +69,7 @@ static u32 readmem(u32 addr)
     return val;
 }
 
-static void writemem(u32 addr, u32 val)
+void writemem(u32 addr, u32 val)
 {
     void *map, *regaddr;
     int fd = -1;
